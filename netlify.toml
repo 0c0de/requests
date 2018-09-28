@@ -1,7 +1,4 @@
-[Settings]
-  ID = "bf0d7971-dccd-4af4-b25d-f23299046f86"
-
-[Build]
-  Command = "npm run-script build"
-  Publish = "./build"
-  Functions = "./functions"
+[build]
+  command = "npm run-script build"
+  publish = "./build"
+  functions = "./functions"
