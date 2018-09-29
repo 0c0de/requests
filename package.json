@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "format": "prettier --write **/*",
-    "start": "webpack-dev-server --mode development"
+    "start": "concurrently --kill-others 'webpack-dev-server --mode development' 'netlify-lambda serve src/functions --port 8081'"
   },
   "dependencies": {
     "react": "^16.2.0",
@@ -21,8 +21,10 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.0",
+    "concurrently": "^4.0.1",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.1.0",
+    "netlify-lambda": "^0.4.0",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.20.3",

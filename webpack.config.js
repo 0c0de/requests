@@ -35,7 +35,16 @@ module.exports = {
   },
   devServer: {
     open: true,
+    port: 8080,
     historyApiFallback: true,
+    proxy: {
+      '/.netlify': {
+        target: 'http://localhost:8081',
+        pathRewrite: {
+          '^/.netlify/functions': '',
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebPackPlugin({
