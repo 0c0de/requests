@@ -1,0 +1,10 @@
+[build]
+  command = "npm run-script build && netlify-lambda build src/functions"
+  publish = "./build"
+  functions = "./functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+ 
